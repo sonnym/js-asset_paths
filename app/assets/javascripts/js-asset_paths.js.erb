@@ -1,0 +1,38 @@
+<%# encoding: utf-8 %>
+
+var PathHelper = (function(definitions) {
+  var assetExtensions = <%= ActionView::Helpers::AssetUrlHelper::ASSET_EXTENSIONS.to_json %>;
+  var assetPublicDirectories = <%= ActionView::Helpers::AssetUrlHelper::ASSET_PUBLIC_DIRECTORIES.to_json %>;
+
+  return {
+    assetPath: function(source, opts) {
+      var key = source;
+
+      if (opts && opts.type) {
+        key = [assetPublicDirectories[opts.type], key].join("/");
+
+        if (source.split(".").length === 1) {
+          key = [key, assetExtensions[opts.type]].join(".");
+        }
+      }
+
+      return ["assets", definitions[key] || key].join("/");
+    },
+
+    fontPath: function(source) {
+      return this.assetPath(source, { type: "font" });
+    },
+
+    imagePath: function(source) {
+      return this.assetPath(source, { type: "image" });
+    },
+
+    javascriptPath: function(source) {
+      return this.assetPath(source, { type: "javascript" });
+    },
+
+    stylesheetPath: function(source) {
+      return this.assetPath(source, { type: "stylesheet" });
+    },
+  };
+})(<%= JsAssetPaths::Generator.generate! %>);
