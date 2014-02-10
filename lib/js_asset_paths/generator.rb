@@ -10,7 +10,9 @@ module JsAssetPaths
 
     def self.asset_hash
       assets.each_file.each_with_object({}) do |filepath, memo|
-        memo[filepath.relative_path_from(base_asset_path)] = output_path(filepath)
+        relative_path = filepath.relative_path_from(base_asset_path)
+
+        memo[relative_path] = output_path(filepath) if local?(relative_path)
       end
     end
 
@@ -28,6 +30,10 @@ module JsAssetPaths
 
     def self.assets
       environment.assets
+    end
+
+    def self.local?(filepath)
+      !(filepath.to_s =~ /\.\.\//)
     end
   end
 end
