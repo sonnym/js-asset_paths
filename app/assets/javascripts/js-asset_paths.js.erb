@@ -7,6 +7,7 @@ var PathHelper = (function(definitions) {
   return {
     assetPath: function(source, opts) {
       var key = source;
+      var prefix = prefix(source);
 
       if (opts && opts.type) {
         key = [assetPublicDirectories[opts.type], key].join("/");
@@ -16,7 +17,7 @@ var PathHelper = (function(definitions) {
         }
       }
 
-      return ["assets", definitions[key] || key].join("/");
+      return ["assets", prefix, definitions[key] || key].join("/");
     },
 
     fontPath: function(source) {
@@ -35,4 +36,17 @@ var PathHelper = (function(definitions) {
       return this.assetPath(source, { type: "stylesheet" });
     },
   };
+
+  function prefix(path) {
+    var prefix = path.split("/");
+
+    prefix.pop();
+    prefix.shift();
+
+    if (prefix.length > 0) {
+      return prefix.join("/");
+    } else {
+      return null;
+    }
+  }
 })(<%= JsAssetPaths::Generator.generate! %>);
