@@ -6,18 +6,7 @@ var PathHelper = (function(definitions) {
 
   return {
     assetPath: function(source, opts) {
-      var key = source;
-      var prefix = prefix(source);
-
-      if (opts && opts.type) {
-        key = [assetPublicDirectories[opts.type], key].join("/");
-
-        if (source.split(".").length === 1) {
-          key = [key, assetExtensions[opts.type]].join(".");
-        }
-      }
-
-      return ["assets", prefix, definitions[key] || key].join("/");
+      return [prefix(source), filename(source, opts)].join("/");
     },
 
     fontPath: function(source) {
@@ -42,11 +31,22 @@ var PathHelper = (function(definitions) {
 
     prefix.pop();
     prefix.shift();
+    prefix.unshift("assets");
 
-    if (prefix.length > 0) {
-      return prefix.join("/");
-    } else {
-      return null;
+    return prefix.join("/");
+  }
+
+  function filename(source, opts) {
+    var key = source;
+
+    if (opts && opts.type) {
+      key = [assetPublicDirectories[opts.type], key].join("/");
+
+      if (source.split(".").length === 1) {
+        key = [key, assetExtensions[opts.type]].join(".");
+      }
     }
+
+    return definitions[key] || key.split("/").pop();
   }
 })(<%= JsAssetPaths::Generator.generate! %>);
