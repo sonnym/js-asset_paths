@@ -47,6 +47,11 @@ var PathHelper = (function(definitions) {
       }
     }
 
-    return definitions[key] || key.split("/").pop();
+    if (definitions[key]) {
+      return definitions[key];
+    }
+    else {
+      throw "Unknown asset '" + key + "'";
+    }
   }
 })(<%= JsAssetPaths::Generator.generate! %>);
