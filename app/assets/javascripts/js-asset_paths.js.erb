@@ -47,6 +47,6 @@ var PathHelper = (function(definitions) {
       }
     }
 
-    return definitions[key] || key.split("/").pop();
+    return definitions[key];
   }
 })(<%= JsAssetPaths::Generator.generate! %>);
