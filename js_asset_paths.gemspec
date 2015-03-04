@@ -6,8 +6,8 @@ require 'js_asset_paths/version'
 Gem::Specification.new do |spec|
   spec.name          = 'js-asset_paths'
   spec.version       = JsAssetPaths::VERSION
-  spec.authors       = ['sonnym', 'sbleon']
-  spec.email         = ['michaud.sonny@gmail.com', 'leon@singlebrook.com']
+  spec.authors       = ['sonnym']
+  spec.email         = ['michaud.sonny@gmail.com']
   spec.description   = 'Access paths to compiled assets from in javascript.'
   spec.summary       = spec.description
   spec.homepage      = ''
