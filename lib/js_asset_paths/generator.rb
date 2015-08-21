@@ -8,11 +8,14 @@ module JsAssetPaths
 
     private
 
+    # Note: In sprockets 2, `each_file` yields a `Pathname`. In 3,
+    # it yields a string. This method supports both.
     def self.asset_hash
       assets.each_file.each_with_object({}) do |filepath, memo|
-        relative_path = filepath.relative_path_from(base_asset_path)
+        path = ::Pathname.new(filepath.to_s)
+        relative_path = path.relative_path_from(base_asset_path)
 
-        memo[relative_path] = output_path(filepath) if local?(relative_path)
+        memo[relative_path] = output_path(path) if local?(relative_path)
       end
     end
 
