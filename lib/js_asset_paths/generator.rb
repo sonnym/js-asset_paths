@@ -26,7 +26,7 @@ module JsAssetPaths
     def self.output_path(filepath)
       if context.digest_assets?
         # Convert the byte string into hexidecimal
-        dgst = assets.file_digest(filepath).unpack('h*')[0]
+        dgst = assets.file_digest(filepath).unpack('H*')[0]
         "#{filepath.basename(filepath.extname)}-#{dgst}#{filepath.extname}"
       else
         filepath.basename.to_s
