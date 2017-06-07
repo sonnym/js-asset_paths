@@ -1,6 +1,6 @@
 module JsAssetPaths
   class Generator
-    cattr_accessor :environment, :context
+    cattr_accessor :environment
 
     def self.generate!
       asset_hash.to_json
@@ -24,12 +24,15 @@ module JsAssetPaths
     end
 
     def self.output_path(filepath)
-      if context.digest_assets?
-        # Convert the byte string into hexidecimal
+      case ::Rails.application.config.assets.digest
+      when true
+        # Convert the byte string into hexadecimal
         dgst = assets.file_digest(filepath).unpack('H*')[0]
         "#{filepath.basename(filepath.extname)}-#{dgst}#{filepath.extname}"
-      else
+      when false
         filepath.basename.to_s
+      else
+        raise "Expected ::Rails.application.config.assets.digest to be boolean"
       end
     end
 
