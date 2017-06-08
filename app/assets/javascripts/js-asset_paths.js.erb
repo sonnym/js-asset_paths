@@ -50,7 +50,7 @@ var PathHelper = (function(definitions) {
     if (definitions[key]) {
       return definitions[key];
     } else {
-      throw "Unknown asset '" + key + "'";
+      throw "Unknown asset '" + key + "'. If you created it recently, you may need to restart Rails.";
     }
   }
 })(<%= JsAssetPaths::Generator.generate! %>);

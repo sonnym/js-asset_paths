@@ -18,6 +18,13 @@ Then require the js-asset_paths file in your `application.js`.
 */
 ```
 
+Ensure that your `config/environments/production.rb` has the following:
+```ruby
+config.assets.compile = true
+```
+(This avoids a `NoMethodError: undefined method each_file for nil:NilClass` when
+precompiling your assets upon deployment.)
+
 ## Usage
 
 A global object called `PathHelper` will be created with the following methods:
