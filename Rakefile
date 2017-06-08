@@ -1,4 +1,7 @@
 #!/usr/bin/env rake
+require 'rubygems'
+
+require 'bundler/setup'
 require 'bundler/gem_tasks'
 
 require 'rake/testtask'
@@ -9,4 +12,4 @@ Rake::TestTask.new do |t|
   t.verbose = true
 end
 
-task :default => :test
+task default: :test

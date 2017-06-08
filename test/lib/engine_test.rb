@@ -5,4 +5,3 @@ describe JsAssetPaths::Engine do
     App.initialize!
   end
 end
-
