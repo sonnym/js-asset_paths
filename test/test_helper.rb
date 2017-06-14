@@ -9,6 +9,8 @@ require 'rails/test_help'
 
 require File.expand_path('../../lib/js_asset_paths.rb', __FILE__)
 
+ActiveSupport.test_order = :random
+
 class App < Rails::Application
   config.eager_load = true
 

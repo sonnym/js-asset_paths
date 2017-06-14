@@ -1,7 +1,7 @@
 require_relative '../test_helper'
 
 describe JsAssetPaths::Engine do
-  it 'should not break the whole app' do
-    App.initialize!
+  it 'permit initializing the application' do
+    App.initialize! unless App.initialized?
   end
 end
