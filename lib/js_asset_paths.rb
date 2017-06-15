@@ -1,3 +1,1 @@
-require 'js_asset_paths/version'
-require 'js_asset_paths/engine'
-require 'js_asset_paths/generator'
+require File.expand_path('../js-asset_paths.rb', __FILE__)
