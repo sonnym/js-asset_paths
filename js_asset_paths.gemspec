@@ -6,8 +6,7 @@ Gem::Specification.new do |spec|
   spec.version       = JsAssetPaths::VERSION
   spec.authors       = ['Sonny Michaud']
   spec.email         = ['michaud.sonny@gmail.com']
-  spec.description   = 'Access paths to compiled assets from in javascript.'
-  spec.summary       = spec.description
+  spec.summary       = 'Access paths to compiled assets from in javascript.'
   spec.homepage      = 'https://github.com/sonnym/js-asset_paths'
   spec.license       = 'MIT'
 
