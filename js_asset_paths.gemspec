@@ -1,30 +1,27 @@
 # coding: utf-8
-lib = File.expand_path('../lib', __FILE__)
-$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'js_asset_paths/version'
+require_relative 'lib/js_asset_paths/version'
 
 Gem::Specification.new do |spec|
   spec.name          = 'js-asset_paths'
   spec.version       = JsAssetPaths::VERSION
-  spec.authors       = ['sonnym']
+  spec.authors       = ['Sonny Michaud']
   spec.email         = ['michaud.sonny@gmail.com']
   spec.description   = 'Access paths to compiled assets from in javascript.'
   spec.summary       = spec.description
-  spec.homepage      = ''
+  spec.homepage      = 'https://github.com/sonnym/js-asset_paths'
   spec.license       = 'MIT'
 
-  spec.files         = `git ls-files`.split($/)
-  spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
-  spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
+  spec.files         = Dir['lib/*.rb']
+  spec.test_files    = Dir['test/*/*_test.rb']
   spec.require_paths = ['lib']
 
-  spec.add_runtime_dependency(%q<rails>, ['>= 4.0'])
+  spec.add_runtime_dependency('rails', ['>= 4.0', '< 5.2'])
 
-  spec.add_development_dependency 'bundler', '~> 1.3'
-  spec.add_development_dependency 'rake'
-  spec.add_development_dependency 'pry'
+  spec.add_development_dependency('bundler', '~> 1.3')
+  spec.add_development_dependency('rake', '~> 12')
+  spec.add_development_dependency('pry', '~> 0')
 
-  spec.add_development_dependency 'appraisal'
-  spec.add_development_dependency 'execjs'
-  spec.add_development_dependency 'therubyracer'
+  spec.add_development_dependency('appraisal', '~> 2.2')
+  spec.add_development_dependency('execjs', '~> 2.7')
+  spec.add_development_dependency('therubyracer', '~> 0')
 end
