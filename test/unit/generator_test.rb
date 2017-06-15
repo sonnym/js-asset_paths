@@ -25,7 +25,9 @@ describe JsAssetPaths::Generator do
     assert_kind_of Hash, ExecJS.eval(@output)
   end
 
-  it 'output has corresponding key and value pairs' do
+  it 'output has corresponding key and value pairs when digest' do
+    assert App.config.assets.digest
+
     map = ExecJS.eval(@output)
 
     map.each do |key, value|
