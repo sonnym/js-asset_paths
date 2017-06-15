@@ -3,6 +3,7 @@
 [![gem version](https://badge.fury.io/rb/js-asset_paths.svg)](https://badge.fury.io/rb/js-asset_paths)
 [![build status](https://travis-ci.org/sonnym/js-asset_paths.svg?branch=master)](https://travis-ci.org/sonnym/js-asset_paths)
 [![code climate](https://codeclimate.com/github/sonnym/js-asset_paths/badges/gpa.svg)](https://codeclimate.com/github/sonnym/js-asset_paths)
+[![test coverage](https://codeclimate.com/github/sonnym/js-asset_paths/badges/coverage.svg)](https://codeclimate.com/github/sonnym/js-asset_paths/coverage)
 
 Inspired by [js-routes](https://github.com/railsware/js-routes), JS Asset Paths makes the helper methods found in [ActionView::Helpers::AssetUrlHelper](http://rubydoc.info/docs/rails/ActionView/Helpers/AssetUrlHelper) available to the client.
 
