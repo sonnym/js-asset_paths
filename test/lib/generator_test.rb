@@ -32,7 +32,7 @@ describe JsAssetPaths::Generator do
       file = key.split('/').second
       name, _, ext = file.rpartition('.')
 
-      assert_match /#{name}-[0-9,a-z]{64}.#{ext}/, value
+      assert_match (/#{name}-[0-9,a-z]{64}.#{ext}/), value
     end
   end
 end
