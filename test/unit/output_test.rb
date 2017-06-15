@@ -6,8 +6,8 @@ describe 'generated javascript' do
     App.initialize! unless App.initialized?
     JsAssetPaths::Generator.environment = Rails.application
 
-    @js_file_contents = ERB.new(File.read('app/assets/javascripts/js-asset_paths.js.erb')).result(binding)
-    @js_context = ExecJS.compile(@js_file_contents)
+    js_file_contents = ERB.new(File.read('app/assets/javascripts/js-asset_paths.js.erb')).result(binding)
+    @js_context = ExecJS.compile(js_file_contents)
   end
 
   it 'PathHelper is an object' do
@@ -32,5 +32,10 @@ describe 'generated javascript' do
 
   it 'PathHelper.stylesheetPath is a function' do
     assert_equal 'function', @js_context.eval('typeof PathHelper.stylesheetPath')
+  end
+
+  it 'has the correct number of public functions' do
+    assert_equal JsAssetPaths::ASSET_METHODS.length + 1,
+      @js_context.eval('Object.keys(PathHelper).length')
   end
 end
