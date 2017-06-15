@@ -31,7 +31,7 @@ describe 'untrue values of config.assets.digest' do
 
       JsAssetPaths::Generator.environment = Rails.application
 
-      assert_raises { JsAssetPaths::Generator.generate! }
+      assert_raises(TypeError) { JsAssetPaths::Generator.generate! }
     ensure
       Rails.application.config.assets.digest = true
     end
