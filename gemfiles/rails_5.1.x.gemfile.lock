@@ -141,7 +141,7 @@ DEPENDENCIES
   execjs (~> 2.7)
   js-asset_paths!
   pry (~> 0)
-  rails (= 5.1.1)
+  rails (~> 5.1.0)
   rake (~> 12)
   therubyracer (~> 0)
 
