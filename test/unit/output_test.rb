@@ -34,6 +34,10 @@ describe 'generated javascript' do
     assert_equal 'function', @js_context.eval('typeof PathHelper.stylesheetPath')
   end
 
+  it 'PathHelper.videoPath is a function' do
+    assert_equal 'function', @js_context.eval('typeof PathHelper.videoPath')
+  end
+
   it 'has the correct number of public functions' do
     assert_equal JsAssetPaths::ASSET_METHODS.length + 1,
       @js_context.eval('Object.keys(PathHelper).length')
