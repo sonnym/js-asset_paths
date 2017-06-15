@@ -9,21 +9,11 @@ var PathHelper = (function(definitions) {
       return [prefix(source), filename(source, opts)].join("/");
     },
 
-    fontPath: function(source) {
-      return this.assetPath(source, { type: "font" });
-    },
-
-    imagePath: function(source) {
-      return this.assetPath(source, { type: "image" });
-    },
-
-    javascriptPath: function(source) {
-      return this.assetPath(source, { type: "javascript" });
-    },
-
-    stylesheetPath: function(source) {
-      return this.assetPath(source, { type: "stylesheet" });
-    },
+    <% JsAssetPaths::ASSET_METHODS.map(&:to_s).each_with_index do |method, i| %>
+    <%= "#{method.split('_').first}Path: function(source) {" %>
+      <%= %Q(return this.assetPath(source, { type: "#{method.split('_').first}" });) %>
+    <%= "}#{',' unless i == JsAssetPaths::ASSET_METHODS.count - 1}" %>
+    <% end %>
   };
 
   function prefix(path) {

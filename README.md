@@ -32,10 +32,12 @@ precompiling your assets upon deployment.)
 A global object called `PathHelper` will be created with the following methods:
 
  - assetPath(source[, options])
+ - audioPath(source)
  - fontPath(source)
  - imagePath(source)
  - javascriptPath(source)
  - stylesheetPath(source)
+ - videoPath(source)
 
 These functions operate in the same manner as their server-side counterparts.
 
