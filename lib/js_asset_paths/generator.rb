@@ -24,20 +24,25 @@ module JsAssetPaths
     end
 
     def self.output_path(filepath)
-      case ::Rails.application.config.assets.digest
-      when true
+      unless digest?.in?([true, false])
+        raise TypeError.new('Expected ::Rails.application.config.assets.digest to be boolean')
+      end
+
+      if digest?
         # Convert the byte string into hexadecimal
         dgst = assets.file_digest(filepath).unpack('H*')[0]
         "#{filepath.basename(filepath.extname)}-#{dgst}#{filepath.extname}"
-      when false
-        filepath.basename.to_s
       else
-        raise "Expected ::Rails.application.config.assets.digest to be boolean"
+        filepath.basename.to_s
       end
     end
 
     def self.assets
       environment.assets
+    end
+
+    def self.digest?
+      ::Rails.application.config.assets.digest
     end
 
     def self.local?(filepath)
