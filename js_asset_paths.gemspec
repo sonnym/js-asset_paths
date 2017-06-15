@@ -23,4 +23,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency('appraisal', '~> 2.2')
   spec.add_development_dependency('execjs', '~> 2.7')
   spec.add_development_dependency('therubyracer', '~> 0')
+
+  spec.add_development_dependency('codeclimate-test-reporter', '~> 1')
 end
