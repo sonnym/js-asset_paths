@@ -20,7 +20,7 @@ module JsAssetPaths
     end
 
     def self.base_asset_path
-      @base_asset_path || Rails.root.join('app', 'assets')
+      @base_asset_path ||= Rails.root.join('app', 'assets')
     end
 
     def self.output_path(filepath)
