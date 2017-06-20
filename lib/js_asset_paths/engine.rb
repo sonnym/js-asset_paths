@@ -1,4 +1,5 @@
-require 'rails'
+require 'action_dispatch'
+require 'rails/engine'
 
 module JsAssetPaths
   class Engine < Rails::Engine
