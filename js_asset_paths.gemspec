@@ -11,7 +11,6 @@ Gem::Specification.new do |spec|
   spec.license       = 'MIT'
 
   spec.files         = Dir['lib/*.rb']
-  spec.test_files    = Dir['test/unit/*_test.rb']
   spec.require_paths = ['lib']
 
   spec.add_runtime_dependency('rails', ['>= 4.0', '< 5.2'])
