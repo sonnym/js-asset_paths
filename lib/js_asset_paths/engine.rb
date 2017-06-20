@@ -1,3 +1,6 @@
+require 'action_dispatch'
+require 'rails/engine'
+
 module JsAssetPaths
   class Engine < Rails::Engine
     JS_ASSET_PATHS_FILE = 'js-asset_paths'
