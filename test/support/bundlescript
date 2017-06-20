@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+require 'bundler/inline'
+
+gemfile true do
+  source 'https://rubygems.org'
+  gem 'js-asset_paths', path: '.'
+end
