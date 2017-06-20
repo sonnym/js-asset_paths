@@ -17,3 +17,7 @@ end
 appraise 'rails-5.1.x' do
   gem 'rails', '~> 5.1.0'
 end
+
+appraise 'rails-master' do
+  gem 'rails', github: 'rails/rails', ref: :master
+end
