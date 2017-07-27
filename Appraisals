@@ -20,4 +20,5 @@ end
 
 appraise 'rails-master' do
   gem 'rails', github: 'rails/rails', ref: :master
+  gem 'arel', github: 'rails/arel', ref: :master
 end

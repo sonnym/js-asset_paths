@@ -1,6 +1,13 @@
 GIT
+  remote: git://github.com/rails/arel.git
+  revision: f4227bf20a16a1d688afc24cf0038e2f98905dd4
+  ref: master
+  specs:
+    arel (9.0.0.alpha)
+
+GIT
   remote: git://github.com/rails/rails.git
-  revision: 7f9986237f45a9e771562470bbba629881d0f4aa
+  revision: 566c2c4498cc88cae3f1a999e4cb49f836e89efb
   ref: master
   specs:
     actioncable (5.2.0.alpha)
@@ -17,7 +24,7 @@ GIT
       actionview (= 5.2.0.alpha)
       activesupport (= 5.2.0.alpha)
       rack (~> 2.0)
-      rack-test (~> 0.6.3)
+      rack-test (>= 0.6.3)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.0, >= 1.0.2)
     actionview (5.2.0.alpha)
@@ -34,7 +41,7 @@ GIT
     activerecord (5.2.0.alpha)
       activemodel (= 5.2.0.alpha)
       activesupport (= 5.2.0.alpha)
-      arel (~> 8.0)
+      arel (= 9.0.0.alpha)
     activesupport (5.2.0.alpha)
       concurrent-ruby (~> 1.0, >= 1.0.2)
       i18n (~> 0.7)
@@ -49,7 +56,7 @@ GIT
       activemodel (= 5.2.0.alpha)
       activerecord (= 5.2.0.alpha)
       activesupport (= 5.2.0.alpha)
-      bundler (>= 1.3.0, < 2.0)
+      bundler (>= 1.3.0)
       railties (= 5.2.0.alpha)
       sprockets-rails (>= 2.0.0)
     railties (5.2.0.alpha)
@@ -72,18 +79,17 @@ GEM
       bundler
       rake
       thor (>= 0.14.0)
-    arel (8.0.0)
     builder (3.2.3)
     codeclimate-test-reporter (1.0.8)
       simplecov (<= 0.13)
     coderay (1.1.1)
     concurrent-ruby (1.0.5)
     docile (1.1.5)
-    erubi (1.6.0)
+    erubi (1.6.1)
     execjs (2.7.0)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
-    i18n (0.8.4)
+    i18n (0.8.6)
     json (2.1.0)
     libv8 (3.16.14.19)
     loofah (2.0.3)
@@ -95,7 +101,7 @@ GEM
       mime-types-data (~> 3.2015)
     mime-types-data (3.2016.0521)
     mini_portile2 (2.2.0)
-    minitest (5.10.2)
+    minitest (5.10.3)
     nio4r (2.1.0)
     nokogiri (1.8.0)
       mini_portile2 (~> 2.2.0)
@@ -104,8 +110,8 @@ GEM
       method_source (~> 0.8.1)
       slop (~> 3.4)
     rack (2.0.3)
-    rack-test (0.6.3)
-      rack (>= 1.0)
+    rack-test (0.7.0)
+      rack (>= 1.0, < 3)
     rails-dom-testing (2.0.3)
       activesupport (>= 4.2.0)
       nokogiri (>= 1.6)
@@ -142,6 +148,7 @@ PLATFORMS
 
 DEPENDENCIES
   appraisal (~> 2.2)
+  arel!
   bundler (~> 1.3)
   codeclimate-test-reporter (~> 1)
   execjs (~> 2.7)
