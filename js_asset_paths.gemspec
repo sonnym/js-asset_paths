@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.homepage      = 'https://github.com/sonnym/js-asset_paths'
   spec.license       = 'MIT'
 
-  spec.files         = Dir['lib/**/*.rb']
+  spec.files         = Dir['app/**/*', 'lib/**/*.rb']
   spec.require_paths = ['lib']
 
   spec.add_runtime_dependency('rails', ['>= 4.0', '< 5.2'])
