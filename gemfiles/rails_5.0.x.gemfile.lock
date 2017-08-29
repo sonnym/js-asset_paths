@@ -1,7 +1,7 @@
 PATH
   remote: ..
   specs:
-    js-asset_paths (0.4.2)
+    js-asset_paths (0.4.3)
       rails (>= 4.0, < 5.2)
 
 GEM
@@ -146,4 +146,4 @@ DEPENDENCIES
   therubyracer (~> 0)
 
 BUNDLED WITH
-   1.15.3
+   1.15.4
