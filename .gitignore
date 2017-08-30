@@ -1,5 +1,5 @@
 Gemfile.lock
-*.gem
 coverage
 log
+pkg
 tmp
