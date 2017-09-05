@@ -7,7 +7,7 @@ GIT
 
 GIT
   remote: git://github.com/rails/rails.git
-  revision: 9a66a22102db76896f400939165ec92280e092e7
+  revision: 18f342d82a380d5bd23c33018818224d32b69a95
   ref: master
   specs:
     actioncable (5.2.0.alpha)
@@ -86,7 +86,7 @@ GEM
     builder (3.2.3)
     codeclimate-test-reporter (1.0.8)
       simplecov (<= 0.13)
-    coderay (1.1.1)
+    coderay (1.1.2)
     concurrent-ruby (1.0.5)
     docile (1.1.5)
     erubi (1.6.1)
@@ -132,7 +132,7 @@ GEM
     sprockets (3.7.1)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
-    sprockets-rails (3.2.0)
+    sprockets-rails (3.2.1)
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
@@ -163,4 +163,4 @@ DEPENDENCIES
   therubyracer (~> 0)
 
 BUNDLED WITH
-   1.15.4
+   1.16.0.pre.1

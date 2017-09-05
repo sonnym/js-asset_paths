@@ -41,7 +41,7 @@ GEM
     builder (3.2.3)
     codeclimate-test-reporter (1.0.8)
       simplecov (<= 0.13)
-    coderay (1.1.1)
+    coderay (1.1.2)
     concurrent-ruby (1.0.5)
     docile (1.1.5)
     erubis (2.7.0)
@@ -116,4 +116,4 @@ DEPENDENCIES
   therubyracer (~> 0)
 
 BUNDLED WITH
-   1.15.4
+   1.16.0.pre.1
