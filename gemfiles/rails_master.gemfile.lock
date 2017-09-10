@@ -7,7 +7,7 @@ GIT
 
 GIT
   remote: git://github.com/rails/rails.git
-  revision: 18f342d82a380d5bd23c33018818224d32b69a95
+  revision: 83bfe0758363328a2cc4da54c9f02c10a29d8149
   ref: master
   specs:
     actioncable (5.2.0.alpha)
@@ -163,4 +163,4 @@ DEPENDENCIES
   therubyracer (~> 0)
 
 BUNDLED WITH
-   1.16.0.pre.1
+   1.16.0.pre.2
