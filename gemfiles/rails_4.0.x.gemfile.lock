@@ -2,7 +2,7 @@ PATH
   remote: ..
   specs:
     js-asset_paths (0.4.3)
-      rails (>= 4.0, < 5.2)
+      rails (>= 4.0, < 6.0)
 
 GEM
   remote: https://rubygems.org/
@@ -44,7 +44,7 @@ GEM
     docile (1.1.5)
     erubis (2.7.0)
     execjs (2.7.0)
-    i18n (0.9.1)
+    i18n (0.9.4)
       concurrent-ruby (~> 1.0)
     json (2.1.0)
     libv8 (3.16.14.19)
@@ -53,7 +53,7 @@ GEM
     method_source (0.9.0)
     mini_mime (1.0.0)
     minitest (4.7.5)
-    multi_json (1.12.2)
+    multi_json (1.13.1)
     pry (0.11.3)
       coderay (~> 1.1.0)
       method_source (~> 0.9.0)
