@@ -13,7 +13,7 @@ Gem::Specification.new do |spec|
   spec.files         = Dir['{app,lib}/**/*'] | %w(LICENSE README.md)
   spec.require_paths = ['lib']
 
-  spec.add_runtime_dependency('rails', ['>= 4.0', '< 6.0'])
+  spec.add_runtime_dependency('rails', ['>= 4.0', '< 6.1'])
 
   spec.add_development_dependency('bundler', '~> 1.3')
   spec.add_development_dependency('rake', '~> 12')
