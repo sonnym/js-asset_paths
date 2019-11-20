@@ -24,4 +24,8 @@ matrix:
       gemfile: gemfiles/rails_6.0.x.gemfile
     - rvm: 2.3
       gemfile: gemfiles/rails_master.gemfile
+    - rvm: 2.4
+      gemfile: gemfiles/rails_6.0.x.gemfile
+    - rvm: 2.4
+      gemfile: gemfiles/rails_master.gemfile
 cache: bundler
