@@ -10,6 +10,9 @@ gemfile:
   - gemfiles/rails_6.0.x.gemfile
   - gemfiles/rails_master.gemfile
 
+before_install:
+  - gem install bundler
+
 after_success:
   - bundle exec codeclimate-test-reporter
 
